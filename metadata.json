@@ -1,0 +1,5 @@
+{
+  "name": "企業節能補助智慧比對工具 (Corporate Energy-Saving Subsidy Matching Tool)",
+  "description": "一個 AI 驅動的工具，旨在幫助台灣企業根據其特定資料，精準比對並發現最相關的政府節能補助方案。",
+  "requestFramePermissions": []
+}

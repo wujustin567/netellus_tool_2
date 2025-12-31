@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>企業節能補助智慧比對工具</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <style>
+      :root {
+        --netellus-green: #43FF59;
+        --earth-black: #171918;
+        --energy-yellow: #EDFE00;
+        --sky-blue: #00EEFF;
+        --concrete: #FDF9F1;
+        --ash-gray: #C9D1CC;
+        --brand-radius: 1.5rem; /* large rounded corners */
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--concrete);
+        color: var(--earth-black);
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: var(--earth-black);
+      }
+
+      /* Custom focus ring color */
+      .focus-brand:focus {
+        --tw-ring-color: var(--netellus-green);
+        border-color: var(--netellus-green);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-[var(--concrete)]">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
