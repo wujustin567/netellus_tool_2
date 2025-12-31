@@ -61,17 +61,25 @@ function buildPrompt(profile: CompanyProfile): string {
   - 措施：${profile.projectMeasureType}
   
   **執行指令：**
-  1. 使用 Google Search 優先搜尋以下網站 2024-2025 年的補助：
-     - 經濟部能源署 (energypark.org.tw)
+  1. 使用 Google Search 優先搜尋以下網站 2024-2025 年的最新公告與補助計畫：
+     - 經濟部能源署 (如：energypark.org.tw, moeaea.gov.tw)
      - 經濟部產業發展署 (ida.gov.tw)
-     - 經濟部商業發展署
-     - 環境部氣候變遷署
-  2. **嚴格禁止憑空捏造數據**。若搜尋不到特定設備補助，請回傳空陣列。
-  3. **計算要求**：
+     - 經濟部商業發展署 (commerce.gov.tw)
+     - 經濟部中小及新創企業署 (sme.gov.tw)
+     - 環境部 (moenv.gov.tw)
+  2. **搜尋關鍵字建議**：
+     - "${profile.projectEquipmentType} 補助 2024 2025"
+     - "節能績效保證專案 ESCO"
+     - "商業服務業智慧減碳補助"
+     - "中小製造業低碳化智慧化升級轉型"
+     - "廢熱回收 補助"
+  3. **嚴格禁止憑空捏造數據**。若搜尋不到特定設備補助，請回傳空陣列。
+  4. **計算要求**：
+     - 必須找到具體的補助上限或比例（例如：「每案上限 500 萬」、「補助比例 30%」）。
      - 若政策寫「補助 30%」，則預估補助 = ${profile.estimatedBudget} * 0.3。
      - 若政策寫「上限 50 萬」，則預估補助不可超過 50 萬。
      - 投資回收年限 = (${profile.estimatedBudget} - 預估補助) / (年省電費)。請根據該設備平均節能率 (15-25%) 推算。
-  4. 必須在「sources」中列出你搜尋到的網頁網址。
+  5. 必須在「sources」中列出你搜尋到的網頁網址。
   `;
 }
 

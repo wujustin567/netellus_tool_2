@@ -34,6 +34,17 @@
         border-color: var(--netellus-green);
       }
     </style>
+    <script>
+      // GitHub Pages fix: redirect to trailing slash if missing, 
+      // so relative paths (like ./index.tsx) resolve correctly.
+      (function() {
+        var path = window.location.pathname;
+        // If path doesn't end with slash and doesn't look like a file extension
+        if (path.length > 1 && !path.endsWith('/') && !path.includes('.')) {
+          window.location.replace(path + '/' + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
   <script type="importmap">
 {
   "imports": {
@@ -47,6 +58,6 @@
 </head>
   <body class="bg-[var(--concrete)]">
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
